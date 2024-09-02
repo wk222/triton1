@@ -27,11 +27,11 @@ jobs:
         id: set-matrix
         run: |
           if [ x"${{ github.repository }}" == x"openai/triton" ]; then
-            echo 'matrix-required={"runner": [["self-hosted", "A100"], ["self-hosted", "H100"]], "python-version": ["3.11"], "cuda-version": ["12.1"], "cc": ["clang"]}' >> "$GITHUB_OUTPUT"
-            echo 'matrix-optional={"runner": [["self-hosted", "gfx908"], ["self-hosted", "arc770"]], "python-version": ["3.11"], "cuda-version": ["12.1"], "cc": ["clang"]}' >> "$GITHUB_OUTPUT"
+            echo 'matrix-required={"runner": [["self-hosted", "A100"], ["self-hosted", "H100"]], "python-version": ["3.11"], "cuda-version": ["12.4"], "cc": ["clang"]}' >> "$GITHUB_OUTPUT"
+            echo 'matrix-optional={"runner": [["self-hosted", "gfx908"], ["self-hosted", "arc770"]], "python-version": ["3.11"], "cuda-version": ["12.4"], "cc": ["clang"]}' >> "$GITHUB_OUTPUT"
           else
-            echo 'matrix-required={"runner":["ubuntu-latest", "windows-latest"], "python-version": ["3.10", "3.11"], "cuda-version": ["12.1.1"], "cc": ["clang"]}' >> "$GITHUB_OUTPUT"
-            echo 'matrix-optional={"runner":["ubuntu-latest", "windows-latest"], "python-version": ["3.10", "3.11"], "cuda-version": ["12.1.1"], "cc": ["clang"]}' >> "$GITHUB_OUTPUT"
+            echo 'matrix-required={"runner":["ubuntu-latest", "windows-latest"], "python-version": ["3.10", "3.11"], "cuda-version": ["12.4.1"], "cc": ["clang"]}' >> "$GITHUB_OUTPUT"
+            echo 'matrix-optional={"runner":["ubuntu-latest", "windows-latest"], "python-version": ["3.10", "3.11"], "cuda-version": ["12.4.1"], "cc": ["clang"]}' >> "$GITHUB_OUTPUT"
           fi
 
   Integration-Tests:
